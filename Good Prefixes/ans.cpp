@@ -1,32 +1,21 @@
 #include <iostream>
-#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-	int t;
-	cin >> t;
+int main(){
+	int t; cin >> t;
 	while(t--){
-	    int n;
-	    cin >> n;
-        vector<int> arr(n);
-        int sum=0,c=0;
-	    for(int i=0;i<n;i++)
-	    {
-            cin>>arr[i];
-            
-	    }
-        for(int i=0;i<n;i++)
-	    {
-            sum+=arr[i];
-            int max_element = max(max_element, arr[i]);
-            if (sum - max_element == max_element) {
-            c++;
-            
-	    }
-        }
-
-	    cout<<c<<endl;
+		int n; cin >> n;
+		int a[n];
+		for(int i = 0; i < n; i++)
+			cin >> a[i];
+		long long sum = 0;
+		int mx = 0, ans = 0;;
+		for(int i = 0; i < n; i++){
+			sum += a[i];
+			mx = max(mx, a[i]);
+			if(sum - mx == mx) 
+				ans++;
+		}
+		cout << ans << endl;
 	}
-
-	return 0;
 }
